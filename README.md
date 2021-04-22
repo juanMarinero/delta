@@ -285,7 +285,7 @@ Behind the scenes, delta uses `less` for paging. The version of `less` that come
 
 #### Git config files
 
-Set delta to be git's pager in your `.gitconfig`. Delta has many options to alter colors and other details of the output; `delta --help` shows them all. An example is
+Set delta to be git's pager in your `~/.gitconfig` or `[project-path]/.git/config` (see [issue](https://github.com/dandavison/delta/issues/566)). Delta has many options to alter colors and other details of the output; `delta --help` shows them all. An example is
 ```gitconfig
 [core]
     pager = delta
@@ -848,9 +848,9 @@ GIT CONFIG
 
 By default, delta takes settings from a section named "delta" in git config files, if one is
 present. The git config file to use for delta options will usually be ~/.gitconfig, but delta
-follows the rules given in https://git-scm.com/docs/git-config#FILES. Most delta options can be
-given in a git config file, using the usual option names but without the initial '--'. An example
-is
+follows the rules given in https://git-scm.com/docs/git-config#FILES (see also 
+https://github.com/dandavison/delta/issues/566). Most delta options can be given in a git 
+config file, using the usual option names but without the initial '--'. An example is
 
 [delta]
     line-numbers = true
